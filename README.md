@@ -1,14 +1,13 @@
 AWS Serverless React Terraform module
 ================================================
 
-Terraform module which creates S3, CloudFront, and Route53 resources for
-hosting a React application.
+Terraform module which creates S3 and CloudFront resources for hosting a React
+application.
 
 These types of resources are supported:
 
 * [CloudFront Distribution](https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html)
 * [S3 Bucket](https://www.terraform.io/docs/providers/aws/r/s3_bucket.html)
-* [Route53 Record](https://www.terraform.io/docs/providers/aws/r/elb_attachment.html)
 
 
 Usage
@@ -16,7 +15,7 @@ Usage
 
 ```hcl
 module "my-app" {
-  source = "terraform-aws-modules/serverless-react/aws"
+  source = "chroto/serverless-react/aws"
   name = "my-app"
 ```
 
@@ -26,6 +25,9 @@ Examples
 
 Known Issues/Limitations
 ------------------------
+* CloudFront restrictions can not be configured
+* Custom aliases and domain names are unavailable
+* Custom SSL Certificates are not supported
 
 Authors
 -------
